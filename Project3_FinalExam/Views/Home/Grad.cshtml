@@ -1,0 +1,39 @@
+﻿@model List<GradMajors>
+
+<div id="myGradDegrees"  style="  background: #edfcf0;">
+    @foreach (var grad in Model)
+    {
+        @if (grad.degreeName != "graduate advanced certificates")
+        {
+            <h3 id=@String.Concat("myHdng", grad.degreeName) style="border-width: 1px; border-style:outset;padding:10px"><b>&#127891;@grad.title</b></h3>
+
+            <div id=@String.Concat("myDiv", grad.degreeName)>
+                <b>@grad.title</b>
+                <p>@grad.description</p>
+                <br />
+                <ul>
+                    @foreach (var conc in grad.concentrations)
+                    {
+                        <h4><li>&#128073;@conc</li></h4>
+
+                    }
+                </ul><br />
+            </div>
+        }
+        else
+        {
+            <h3 id=@String.Concat("myHdng", grad.degreeName) style="border-width: 1px; border-style:outset;padding:10px"><b>@grad.degreeName</b></h3>
+            <div id=@String.Concat("myDiv", grad.degreeName)>
+                <br />
+                <ul>
+                    @foreach (var ac in grad.availableCertificates)
+                    {
+                        <li>@ac</li>
+
+                    }
+                    
+                </ul><br />
+            </div>
+        }
+    }
+</div>

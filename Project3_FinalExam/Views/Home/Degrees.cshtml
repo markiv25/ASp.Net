@@ -1,0 +1,203 @@
+﻿@model Project3_FinalExam.ViewModels.DegreeViewModel
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Greensward - Gardening Category Bootstrap Responsive Website Template - Services : W3Layouts</title>
+	<!-- google-fonts -->
+	<link href="//fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+	<!-- //google-fonts -->
+</head>
+
+<body>
+	<!-- inner banner -->
+	<section class="inner-banner py-lg-4 pt-lg-0 pt-5">
+		<div class="w3l-breadcrumb py-5 mt-lg-0 mt-3">
+			<div class="container py-xl-5 py-md-4">
+				<h4 class="inner-text-title font-weight-bold mb-md-2 mb-1">Services</h4>
+				<ul class="breadcrumbs-custom-path">
+					<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+					<li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Services</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- //inner banner -->
+	<!-- services section -->
+	<section class="w3l-content-11-main">
+		<div class="content-design-11 py-5">
+			<div class="container py-md-5 py-4">
+				<div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:600px;">
+					<h3 class="title-style">
+                        Our <span>Degress</span>
+                    </h3> </div>
+				<div class="content-sec-11">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="services-content">
+								<div id="underDegreeHolder" style="background:#c5fcd1">
+									<div class="services-single d-flex p-sm-5 p-4" style="min-height:290px">
+										<div class="service-icon mr-sm-4 mr-3"> <i class="fas fa-spa"></i> </div>
+										<h2>
+                                            Undergraduate Degrees<br>
+
+                                            @await Html.PartialAsync("Under.cshtml", Model.UnderGrads)
+                                        </h2> </div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="services-single d-flex p-sm-5 p-4" style="background:#c5fcd1">
+								<div class="service-icon mr-sm-4 mr-3"> <i class="fas fa-seedling"></i> </div>
+								<div class="services-content">
+									<div id="gradDegreeHolder">
+										<h2>Graduate Degrees</h2>
+										<div id="innerGradContainer"> </div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- //services section -->
+	<!-- middle -->
+	<div class="middle-inner py-5">
+		<div class="container py-md-5 py-4">
+			<div class="about-left text-center py-lg-4">
+				<h3 class="title-big">Welcome to RIT</h3>
+				<p> At Rochester Institute of Technology, we shape the future and improve the world through creativity and innovation. As an engaged, intellectually curious, and socially conscious community, we leverage the power of technology, the arts, and design for the greater good.</p>
+			</div>
+		</div>
+	</div>
+<section class="w3l-service-3 py-5">
+	<div class="container py-md-5 py-4">
+		<div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:600px;">
+			<h3 class="title-style">Advancing the exceptional  <span>through...</span>
+                </h3> </div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<div class="service-single-grid" style="min-height:420px">
+					<div class="service-image"> <img src="~/images/home-s1.jpg" class="img-fluid" alt=""> </div>
+					<div class="service-content p-4">
+						<h5 class="mb-2"><a asp-area="" asp-controller="Home" asp-action="Degrees">Degrees Offered</a></h5>
+						<p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers luctus eted.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-md-0 mt-sm-5 mt-4">
+				<div class="service-single-grid" style="min-height:420px">
+					<div class="service-image"> <img src="~/images/minor.jpeg" class="img-fluid" alt=""> </div>
+					<div class="service-content p-4">
+						<h5 class="mb-2"><a asp-area="" asp-controller="Home" asp-action="Degrees">Minors offered</a></h5>
+						<p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers luctus eted.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mt-lg-0 mt-sm-5 mt-4">
+				<div class="service-single-grid" style="min-height:420px">
+					<div class="service-image"> <img src="~/images/employ.jpeg" class="img-fluid" alt=""> </div>
+					<div class="service-content p-4">
+						<h5 class="mb-2"><a asp-area="" asp-controller="Home" asp-action="Degrees">Employement data</a></h5>
+						<p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers luctus eted.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	<!-- service 3 grids -->
+	<!-- //footer -->
+	<!-- Js scripts -->
+	<!-- move top -->
+	<button onclick="topFunction()" id="movetop" title="Go to top"> <span class="fas fa-level-up-alt" aria-hidden="true"></span> </button>
+	<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {
+		scrollFunction()
+	};
+
+	function scrollFunction() {
+		if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			document.getElementById("movetop").style.display = "block";
+		} else {
+			document.getElementById("movetop").style.display = "none";
+		}
+	}
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
+	</script>
+
+	<!-- magnific popup -->
+	<script>
+	$(document).ready(function() {
+		$('.popup-with-zoom-anim').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+		});
+		$('.popup-with-move-anim').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-slide-bottom'
+		});
+	});
+	</script>
+ @*Get jQuery and jQueryUI Scripts from wwwroot*@
+	@section Scripts {
+	<script>
+	$(document).ready(function() {
+		$('#myUnderDegrees').accordion({
+			collapsible: true,
+			active: false,
+			heightStyle: "content"
+		});
+		$.ajax({
+			url: "/Home/GetGradMajors",
+			success: function(data, textStatus, jqXHR) {
+				$("#innerGradContainer").html(data);
+				$("#loadGrads").hide();
+				$('#myGradDegrees').accordion({
+					collapsible: true,
+					active: false,
+					heightStyle: "content"
+				});
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				console.log(jqXHR);
+				console.log(textStatus);
+				$("#innerGradContainer").html("<p>Unable to load Graduate Degrees</p>");
+			}
+		});
+	});
+	</script> }
+	<!-- //bootstrap-->
+	<!-- //Js scripts -->
+</body>
+
+</html>

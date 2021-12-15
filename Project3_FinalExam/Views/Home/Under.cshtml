@@ -1,0 +1,22 @@
+﻿@model List<UnderGradMajors>
+
+<div id="myUnderDegrees" style="  background: #edfcf0;">
+	@foreach (var under in Model)
+	{
+		<h3 id=@String.Concat("myHdng", under.degreeName) style="border-width: 1px; border-style:outset;padding:10px"><b> &#128218;@under.title</b></h3>
+
+		<div id=@String.Concat("myDiv", under.degreeName) >
+	
+		<cite><strong><p>@under.description</p></strong></cite>	
+			<br />
+			<ul>
+				@foreach (var conc in @under.concentrations)
+				{
+					<li><h4>&#128073; @conc</h4></li>
+					
+				}
+			</ul><br />
+		</div>
+	
+	}	
+</div>

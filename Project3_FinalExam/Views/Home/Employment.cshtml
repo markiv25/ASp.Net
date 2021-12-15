@@ -1,0 +1,112 @@
+﻿@model Project3_FinalExam.ViewModels.EmployViewModel
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Greensward - Gardening Category Bootstrap Responsive Website Template - Contact Us : W3Layouts</title>
+		</head>
+
+<body>
+	<!-- top header -->
+	<!-- //top header -->
+	<!-- inner banner -->
+	<section class="inner-banner py-lg-4 pt-lg-0 pt-5">
+		<div class="w3l-breadcrumb py-5 mt-lg-0 mt-3">
+			<div class="container py-xl-5 py-md-4">
+				<h4 class="inner-text-title font-weight-bold mb-md-2 mb-1">Employment Data:</h4>
+				<ul class="breadcrumbs-custom-path">
+					<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+					<li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Contact Us</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<!-- //inner banner -->
+	<!-- contact -->
+	<section class="w3l-contact pb-5" id="contact">
+		<div class="container pb-md-5 pb-4">
+			<div class="row contact-block"> </div>
+		</div>
+	</section>
+	<section class="w3l-team py-5" style="background-color:#ddedd8">
+		<div class="container py-md-5 py-4">
+			<h3 class="title-style" style="text-align:center">   <span >Map</span></h3>
+			<div class="map-iframe">
+				<iframe src="http://ist.rit.edu/api/map.php" width="1000px" frameborder="0" allowfullscreen=""></iframe>
+			</div>
+			<div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+				<h3 class="title-style">Data on  <span>Employment</span>
+                </h3> </div>
+			<div class="row team-row pt-lg-3">
+				<!-- end team member -->
+				<div class="table-responsive" style="font-size:x-large">
+					<table id="table_id" class="table table-striped table-bordered table-hover dt-responsive" style="width:10">
+						<thead>
+							<tr> 
+								<b> <th class="sort">Employer</th> </b>
+								<b> <th class="sort">City</th> </b>
+								<b> <th class="sort">Degree</th> </b>
+								<b> <th class="sort">Term</th> </b>
+							</tr>
+						</thead> 
+						<tbody>
+							@for (var i = 0; i< Model.Employ.Count; i++) { 
+							
+							<tr>
+								<td>@Model.Employ[i].employer</td>
+								<td>@Model.Employ[i].city</td>
+								<td>@Model.Employ[i].degree</td>
+								<td>@Model.Employ[i].term</td>
+							</tr>
+							}
+							</tbody> 
+						 </table>
+				</div>
+			</div>
+		</div>
+		</div> }
+		<!-- end team member -->
+		</div>
+		</div>
+	</section>
+	<!-- //contact -->
+	<!-- Js scripts -->
+	<!-- move top -->
+	<button onclick="topFunction()" id="movetop" title="Go to top"> <span class="fas fa-level-up-alt" aria-hidden="true"></span> </button>
+	<script>
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {
+		scrollFunction()
+	};
+
+	function scrollFunction() {
+		if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			document.getElementById("movetop").style.display = "block";
+		} else {
+			document.getElementById("movetop").style.display = "none";
+		}
+	}
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
+	</script>
+	<!-- //move top -->
+	<!-- common jquery plugin -->
+	
+	<!-- //common jquery plugin -->
+	<!-- MENU-JS -->
+	
+	<!-- //MENU-JS -->
+	@section Scripts {
+	<script>
+	
+        $(document).ready(function () {
+			console.log("Ready Doc")
+            $('#table_id').DataTable();
+        });
+	</script>
+
+	<!-- //MENU-JS -->} </body>

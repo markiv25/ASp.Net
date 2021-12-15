@@ -1,0 +1,290 @@
+﻿@model Project3_FinalExam.ViewModels.MixViewModel
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Greensward - Gardening Category Bootstrap Responsive Website Template - Contact Us : W3Layouts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+@section CSS {
+<style>
+h2 {
+	color: red;
+}
+</style> }
+<!--//header-->
+<!-- inner banner -->
+<section class="inner-banner py-lg-4 pt-lg-0 pt-5">
+	<div class="w3l-breadcrumb py-5 mt-lg-0 mt-3">
+		<div class="container py-xl-5 py-md-4">
+			<h4 class="inner-text-title font-weight-bold mb-md-2 mb-1">People</h4>
+			<ul class="breadcrumbs-custom-path">
+				<li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+				<li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>About Us</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- //inner banner -->
+<!-- about section -->
+<section class="w3l-features-6 pt-5">
+	<div class="container pt-md-5 pt-4">
+		<div class="row">
+			<div class="co!important-lg-7 w3l-features-6-right order-lg-last order-first mb-lg-0 mb-4" style=" margin-left:20%;">
+				<div class="title-main text-center mx-auto mb-sm-5 mb-4" style="max-width:600px;">
+					<h3 class="title-style">By the <span>Numbers</span>
+                        </h3> </div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //about section -->
+<!-- stats -->
+<section class="w3_stats py-5" id="stats">
+	<div class="container py-md-5 py-4">
+		<div class="w3-stats text-center py-md-4">
+			<div class="row mt-4">
+				<div class="col-md-3 col-6">
+					<div class="counter"> <i class="fas fa-calendar-alt"></i>
+						<div class="timer count-title count-number mt-3" data-to="191" data-speed="1500"></div>
+						<p class="count-text">Years of Experience</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-6">
+					<div class="counter"> <i class="fas fa-smile"></i>
+						<div class="timer count-title count-number mt-3" data-to="16668" data-speed="1500"></div>
+						<p class="count-text">Undergraduate</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-6 mt-md-0 mt-5">
+					<div class="counter"> <i class="fas fa-spa"></i>
+						<div class="timer count-title count-number mt-3" data-to="1094" data-speed="1500"></div>
+						<p class="count-text">Faculty</p>
+					</div>
+				</div>
+				<div class="col-md-3 col-6 mt-md-0 mt-5">
+					<div class="counter"> <i class="fas fa-award"></i>
+						<div class="timer count-title count-number mt-3" data-to="2450" data-speed="1500"></div>
+						<p class="count-text">Staff </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //stats -->
+<!-- team section -->
+<div id="myUnderDegrees">
+	<button class="bttn" style="width:100%; height:60px;border-radius: 4px;
+  background-color: #f4511e;font-size: 30px"> Faculty</button>
+	<section class="w3l-team py-5" style="background-color:#ddedd8">
+		<div class="container py-md-5 py-4">
+			<div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+				<h3 class="title-style">Meet Our Excellent <span>Faculties</span>
+                </h3> </div>
+			<div class="row team-row pt-lg-3">
+				<!-- end team member -->
+				@for (var i = 0; i< Model.Faculty.Count; i++) { 
+					<div class="col-lg-3 col-sm-6 team-wrap mt-sm-0 pt-sm-0 mt-4 pt-2" style="padding-top:20px !important">
+					<div data-toggle="modal" data-target=@String.Concat("#myModal", @Model.Faculty[i].name) class="team-info" >
+						<div class="column position-relative img-circle">
+							<a href="#url"><img src="@Model.Faculty[i].imagePath" alt="" class="img-fluid team-image" /></a>
+						</div>
+						<div class="column-btm">
+							<h3 class="name-pos"><a href="#url">@Model.Faculty[i].name</a></h3>
+							<p>@Model.Faculty[i].title</p>
+							<div class="social"> <a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i></a> <a href="#twitter" class="twitter"><i class="fab fa-twitter"></i></a> </div>
+						</div>
+					</div>
+					<div class="modal fade" id=@String.Concat( "myModal", @Model.Faculty[i].name) role="dialog">
+						<div class="modal-dialog modal-side modal-bottom-right modal-notify modal-danger" style="min-width:80%">
+							<!-- Modal content-->
+							<div class="modal-content" style="color:black">
+								<div class="modal-header d-flex justify-content-center">
+									<h1 class="modal-title" style="text-align: center">@Model.Faculty[i].name</h1>
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+								</div>
+								<div class="modal-body"> 
+									@for (var j = 0; j< Model.Research.Count; j++) { 
+									if(@String.Compare(@Model.Faculty[i].name, @Model.Research[j].facultyName)==0){
+									@foreach(var cit in @Model.Research[j].citations)
+									{
+									<p>&#11166;@cit</p>
+									} }}</div>
+									
+								<div class="modal-footer flex-center" style="padding-right:50%"> <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal" style="font-size:xx-large;height:60px;width:100px">Close</a> </div>
+							</div>
+						</div>
+					</div>
+			</div> }
+			<!-- end team member -->
+		</div>
+</div>
+</section>
+</div>
+<div id="staff">
+	<button class="bttn" style="width:100%; height:60px;border-radius: 4px;
+  background-color: #f4511e;font-size: 30px">Staff</button>
+	<section class="w3l-team py-5" style="background-color:#ddedd8">
+		<div class="container py-md-5 py-4">
+			<div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+				<h3 class="title-style">Meet Our Excellent <span>Staff</span>
+                </h3> </div>
+			<div class="row team-row pt-lg-3">
+				<!-- end team member -->
+				@for (var i = 0; i< Model.staff.Count; i++) { 
+					<div class="col-lg-3 col-sm-6 team-wrap mt-sm-0 pt-sm-0 mt-4 pt-2" style="padding-top:20px !important">
+					<div class="team-info">
+						<div class="column position-relative img-circle">
+							<a href="#url"><img src="@Model.staff[i].imagePath" alt="" class="img-fluid team-image" /></a>
+						</div>
+						<div class="column-btm" style="min-width:180px;">
+							<h3 class="name-pos"><a href="#url">@Model.staff[i].name</a></h3>
+							<p>@Model.staff[i].title</p>
+							<div class="social"> <a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i></a> <a href="#twitter" class="twitter"><i class="fab fa-twitter"></i></a> </div>
+						</div>
+					</div>
+			</div> }
+			<!-- end team member -->
+		</div>
+</div>
+</section>
+</div>
+<!-- //team section -->
+<!-- content section -->
+<section class="w3l-content-sec py-5" id="testimonials">
+	<div class="container py-md-5 py-4">
+		<div class="title-main text-center mx-auto mb-lg-5 pb-lg-5" style="max-width:600px;">
+			<h3 class="title-style text-white">The making of a living and the living of a <span>life </span>
+                </h3> </div>
+	</div>
+</section>
+<section class="top-content-w3l">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-4 col-sm-6">
+				<div class="grid-content-spe"> <i class="fas fa-heart"></i>
+					<h4><a href="services.html">Diversity and Inclusion</a></h4>
+					<p>Diversity is essential to organizational growth and synergy. At RIT, you’ll live and study with nearly 2,000 international students from over 100 countries</p> <a href="https://www.rit.edu/about-rit" class="btn btn-style mt-5">Learn More</a> </div>
+			</div>
+			<div class="col-lg-4 col-sm-6 mt-sm-0 mt-4">
+				<div class="grid-content-spe"> <i class="fas fa-users"></i>
+					<h4><a href="services.html">Housing</a></h4>
+					<p>Many of RIT's students live in RIT residence halls, suites, studios, apartments, townhouses, and at the RIT Inn and Conference Center. </p> <a href="https://www.rit.edu/about-rit" class="btn btn-style mt-5">Learn More</a> </div>
+			</div>
+			<div class="col-lg-4 col-sm-6 mt-lg-0 mt-4">
+				<div class="grid-content-spe"> <i class="fas fa-thumbs-up"></i>
+					<h4><a href="services.html">Our Values</a></h4>
+					<p>RIT does not discriminate. RIT promotes and values diversity within its workforce and provides equal opportunity to all qualified individuals</p> <a href="https://www.rit.edu/about-rit" class="btn btn-style mt-5">Learn More</a> </div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //content section -->
+<!-- Js scripts -->
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top"> <span class="fas fa-level-up-alt" aria-hidden="true"></span> </button>
+<!--Counter for  Satst-->
+<script src="assets/js/counter.js"></script>
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {
+	scrollFunction()
+};
+
+function scrollFunction() {
+	if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		document.getElementById("movetop").style.display = "block";
+	} else {
+		document.getElementById("movetop").style.display = "none";
+	}
+}
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+}
+</script>
+<!-- //move top -->
+<!-- common jquery plugin -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+<!-- counter for stats -->
+<!-- //counter for stats -->
+<!-- MENU-JS -->
+<script>
+$(window).on("scroll", function() {
+	var scroll = $(window).scrollTop();
+	if(scroll >= 80) {
+		$("#site-header").addClass("nav-fixed");
+	} else {
+		$("#site-header").removeClass("nav-fixed");
+	}
+});
+//Main navigation Active Class Add Remove
+$(".navbar-toggler").on("click", function() {
+	$("header").toggleClass("active");
+});
+$(document).on("ready", function() {
+	if($(window).width() > 991) {
+		$("header").removeClass("active");
+	}
+	$(window).on("resize", function() {
+		if($(window).width() > 991) {
+			$("header").removeClass("active");
+		}
+	});
+});
+</script>
+<!-- //MENU-JS -->@*Get jQuery and jQueryUI Scripts from wwwroot*@
+@section Scripts {
+<script src="~/jquery/counter.js"></script>
+<script src="~/jquery/jquery.js"></script>
+<link rel="stylesheet" href="~/jqueryui/themes/le-frog/jquery-ui.min.css">
+<script src="~/jqueryui/jquery-ui.js"></script>
+<script>
+var $j = jQuery.noConflict();
+var facultyData = @Html.Raw(Json.Serialize(Model.Faculty));
+
+function getName(id) {
+	console.log(facultyData);
+	let facultyElement = (id).split(':')[1];
+	var divContent = "<div><ul>";
+	divContent += "<li><font color='#18ADEA'><b><u>Title:</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>" + facultyData[facultyElement].title + "</b></<li>"
+	divContent += "<li><font color='#18ADEA'><b><u>Email:</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>" + facultyData[facultyElement].email + "</b></<li>"
+	divContent += "<li><font color='#18ADEA'><b><u>Office:</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>" + facultyData[facultyElement].office + "</b></<li>";
+	divContent += "</ul></div>";
+	console.log(divContent);
+	let elmnt = document.getElementById(id);
+	$j("#dialog").html(divContent);
+	$j("#dialog").dialog({
+		title: facultyData[facultyElement].name,
+		width: 500,
+		position: {
+			my: "center",
+			at: "bottom+40%",
+			of: elmnt
+		}
+	});
+	$j("#dialog").dialog("open")
+}
+</script>
+<script>
+console.log("asdf");
+$('#myUnderDegrees').accordion({
+	collapsible: true,
+	active: false,
+	heightStyle: "content"
+});
+</script>
+<script>
+console.log("asdf");
+$('#staff').accordion({
+	collapsible: true,
+	active: false,
+	heightStyle: "content"
+});
+</script> }
